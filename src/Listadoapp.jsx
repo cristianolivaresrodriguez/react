@@ -36,15 +36,27 @@ export const Listadoapp = () => {
     const [arreglo, setarreglo] = useState(listdosecciones)
     console.log(arreglo)
 
+    const agregapadre = (val) =>{
+        console.log(val)
+
+        if(val < 1) return
+        const envio ={
+            nombre: val,
+            visto: false
+        }
+
+        setarreglo([...arreglo , envio])
+    }
+
   return (
         <>
             <h1>Listado de temas</h1>
-            <Agregartarea addtask={setarreglo}></Agregartarea>
+            
             
             <ol>
                 {arreglo.map(item => <Items key={item.nombre} nombre={item.nombre} visto={item.visto}></Items>)}
             </ol>
-
+            <Agregartarea addtask={agregapadre}></Agregartarea>
             
             {/*<button onClick={() => addelemento()}>Agregar elemento</button>*/}
         </>

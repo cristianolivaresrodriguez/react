@@ -10,13 +10,14 @@ export const Agregartarea = ({addtask}) => {
 
     const manda = (event) =>{
         event.preventDefault()
-        console.log(inputvalue)
+        /*console.log(inputvalue)
 
         const envio ={
             nombre: inputvalue,
             visto: false
-        }
-        addtask(tareas => [...tareas , envio])
+        }*/
+        //addtask(tareas => [...tareas , envio])
+        addtask(inputvalue)
     }
 
   return (
